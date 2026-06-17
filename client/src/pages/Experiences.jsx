@@ -37,7 +37,7 @@ function Experiences() {
 
   const fetchExperiences = useCallback(async (company = '') => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/experiences?company=${company}`, {
+      const res = await axios.get(`https://campus-sync-pklq.onrender.com/api/experiences?company=${company}`, {
         headers: { Authorization: token }
       });
       window[EXP_ALL_KEY] = res.data;
@@ -48,7 +48,7 @@ function Experiences() {
 
   const fetchMyExperiences = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/experiences/mine', {
+      const res = await axios.get('https://campus-sync-pklq.onrender.com/api/experiences/mine', {
         headers: { Authorization: token }
       });
       window[EXP_MINE_KEY] = res.data;
@@ -72,7 +72,7 @@ function Experiences() {
 
     setErrorMsg('');
     try {
-      await axios.post('http://localhost:5000/api/experiences', form, {
+      await axios.post('https://campus-sync-pklq.onrender.com/api/experiences', form, {
         headers: { Authorization: token }
       });
       setForm({ company: '', role: '', rounds: '', questions: '', result: 'selected' });
@@ -84,7 +84,7 @@ function Experiences() {
 
   const handleUpvote = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/experiences/${id}/upvote`, {}, {
+      await axios.put(`https://campus-sync-pklq.onrender.com/api/experiences/${id}/upvote`, {}, {
         headers: { Authorization: token }
       });
       fetchExperiences(search);
@@ -94,7 +94,7 @@ function Experiences() {
 
   const handleEdit = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/experiences/${id}`, editExp, {
+      await axios.put(`https://campus-sync-pklq.onrender.com/api/experiences/${id}`, editExp, {
         headers: { Authorization: token }
       });
       setEditExp(null);
@@ -105,7 +105,7 @@ function Experiences() {
 
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/experiences/${confirmDeleteId}`, {
+      await axios.delete(`https://campus-sync-pklq.onrender.com/api/experiences/${confirmDeleteId}`, {
         headers: { Authorization: token }
       });
       setConfirmDeleteId(null);

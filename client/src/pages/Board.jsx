@@ -35,7 +35,7 @@ function Board() {
 
   const fetchPosts = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/posts', {
+      const res = await axios.get('https://campus-sync-pklq.onrender.com/api/posts', {
         headers: { Authorization: token }
       });
       window[POSTS_KEY] = res.data;
@@ -48,7 +48,7 @@ function Board() {
 
   const fetchMyPosts = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/posts/myposts', {
+      const res = await axios.get('https://campus-sync-pklq.onrender.com/api/posts/myposts', {
         headers: { Authorization: token }
       });
       window[MY_POSTS_KEY] = res.data;
@@ -66,7 +66,7 @@ function Board() {
     if (!form.membersRequired || form.membersRequired < 1) { setFormError('Please enter number of members required'); return; }
     setFormError('');
     try {
-      await axios.post('http://localhost:5000/api/posts', {
+      await axios.post('https://campus-sync-pklq.onrender.com/api/posts', {
         ...form,
         skillsRequired: form.skillsRequired.split(',').map(s => s.trim())
       }, { headers: { Authorization: token } });
@@ -79,21 +79,21 @@ function Board() {
 
   const handleApply = async (id) => {
     try {
-      await axios.post('http://localhost:5000/api/posts/' + id + '/apply', {}, { headers: { Authorization: token } });
+      await axios.post('https://campus-sync-pklq.onrender.com/api/posts/' + id + '/apply', {}, { headers: { Authorization: token } });
       fetchPosts();
     } catch (err) { alert(err.response?.data?.message || 'Error applying'); }
   };
 
   const handleApplicantStatus = async (postId, userId, status) => {
     try {
-      await axios.put('http://localhost:5000/api/posts/' + postId + '/applicants/' + userId, { status }, { headers: { Authorization: token } });
+      await axios.put('https://campus-sync-pklq.onrender.com/api/posts/' + postId + '/applicants/' + userId, { status }, { headers: { Authorization: token } });
       fetchMyPosts();
     } catch (err) { console.log(err); }
   };
 
   const handleClose = async (id) => {
     try {
-      await axios.put('http://localhost:5000/api/posts/' + id + '/close', {}, { headers: { Authorization: token } });
+      await axios.put('https://campus-sync-pklq.onrender.com/api/posts/' + id + '/close', {}, { headers: { Authorization: token } });
       fetchMyPosts();
       fetchPosts();
     } catch (err) { console.log(err); }
@@ -103,7 +103,7 @@ function Board() {
 
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete('http://localhost:5000/api/posts/' + confirmDeleteId, { headers: { Authorization: token } });
+      await axios.delete('https://campus-sync-pklq.onrender.com/api/posts/' + confirmDeleteId, { headers: { Authorization: token } });
       setConfirmDeleteId(null);
       fetchMyPosts();
       fetchPosts();
@@ -118,7 +118,7 @@ function Board() {
 
   const handleEdit = async (id) => {
     try {
-      await axios.put('http://localhost:5000/api/posts/' + id, { ...editPost, skillsRequired: editPost.skillsRequired }, { headers: { Authorization: token } });
+      await axios.put('https://campus-sync-pklq.onrender.com/api/posts/' + id, { ...editPost, skillsRequired: editPost.skillsRequired }, { headers: { Authorization: token } });
       setEditPost(null);
       fetchMyPosts();
       fetchPosts();

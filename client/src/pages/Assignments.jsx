@@ -26,7 +26,7 @@ function Assignments() {
 
   const fetchAssignments = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/assignments', {
+      const res = await axios.get('https://campus-sync-pklq.onrender.com/api/assignments', {
         headers: { Authorization: token }
       });
       window[CACHE_KEY] = res.data;
@@ -46,7 +46,7 @@ function Assignments() {
     if (form.dueDate < today) { setErrorMsg('Due date cannot be in the past'); return; }
     setErrorMsg('');
     try {
-      await axios.post('http://localhost:5000/api/assignments', form, {
+      await axios.post('https://campus-sync-pklq.onrender.com/api/assignments', form, {
         headers: { Authorization: token }
       });
       setForm({ title: '', subject: '', dueDate: '' });
@@ -59,7 +59,7 @@ function Assignments() {
 
   const handleToggleComplete = async (id, currentStatus) => {
     try {
-      await axios.put('http://localhost:5000/api/assignments/' + id + '/complete',
+      await axios.put('https://campus-sync-pklq.onrender.com/api/assignments/' + id + '/complete',
         { completed: !currentStatus },
         { headers: { Authorization: token } }
       );
@@ -73,7 +73,7 @@ function Assignments() {
 
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete('http://localhost:5000/api/assignments/' + confirmDeleteId, {
+      await axios.delete('https://campus-sync-pklq.onrender.com/api/assignments/' + confirmDeleteId, {
         headers: { Authorization: token }
       });
       setConfirmDeleteId(null);
@@ -96,7 +96,7 @@ function Assignments() {
 
   const handleEdit = async (id) => {
     try {
-      await axios.put('http://localhost:5000/api/assignments/' + id, editForm, {
+      await axios.put('https://campus-sync-pklq.onrender.com/api/assignments/' + id, editForm, {
         headers: { Authorization: token }
       });
       setEditId(null);
