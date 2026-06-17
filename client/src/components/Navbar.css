@@ -1,0 +1,293 @@
+/* ── Base Navbar ── */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 68px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+/* ── Logo ── */
+.navbar-logo {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* ── Desktop Links ── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-link {
+  position: relative;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.navbar-link:hover {
+  color: var(--text-main);
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+.navbar-link--active {
+  color: var(--primary);
+  font-weight: 600;
+  background-color: rgba(99, 102, 241, 0.08);
+}
+
+.navbar-active-dot {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+
+/* ── Logout Button ── */
+.navbar-logout-btn {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+  margin-left: 12px;
+}
+
+.navbar-logout-btn:hover {
+  color: var(--error);
+  border-color: rgba(239, 68, 68, 0.2);
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* ── Hamburger (hidden on desktop) ── */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 110;
+  transition: var(--transition);
+}
+
+.navbar-hamburger:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar-hamburger.is-open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-hamburger.is-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.navbar-hamburger.is-open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Logout Modal ── */
+.navbar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar-modal {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  animation: modalEnter 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalEnter {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.navbar-modal-title {
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar-modal-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.navbar-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.navbar-cancel-btn {
+  padding: 10px 24px;
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  transition: var(--transition);
+}
+
+.navbar-cancel-btn:hover {
+  background-color: #F8FAFC;
+  color: var(--text-main);
+}
+
+.navbar-confirm-btn {
+  padding: 10px 24px;
+  background: var(--error);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  transition: var(--transition);
+}
+
+.navbar-confirm-btn:hover {
+  background: #DC2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+/* ════════════════════════════════
+   TABLET  (≤ 1024px)
+   ════════════════════════════════ */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+  }
+}
+
+/* ════════════════════════════════
+   MOBILE  (≤ 768px)
+   ════════════════════════════════ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    height: auto;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+  }
+
+  .navbar-links--open {
+    display: flex;
+  }
+
+  .navbar-link {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .navbar-active-dot {
+    left: auto;
+    right: 16px;
+    transform: none;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar-logout-btn {
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    margin-left: 0;
+    padding: 12px 16px;
+    margin-top: 8px;
+    border: 1px solid var(--border-color);
+  }
+}

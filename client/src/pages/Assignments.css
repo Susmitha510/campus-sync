@@ -1,0 +1,530 @@
+/* ══════════════════════════════════
+   PAGE
+   ══════════════════════════════════ */
+.assignments-page {
+  padding: 40px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.assignments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.assignments-title {
+  color: var(--text-main);
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+/* ══════════════════════════════════
+   FORM CARD
+   ══════════════════════════════════ */
+.assignment-form-card {
+  max-width: 100%;
+  margin: 0 auto 32px auto;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.assignment-form-body {
+  padding: 32px;
+}
+
+.assignment-form-title {
+  margin: 0 0 24px 0;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.assignment-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.assignment-field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.assignment-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.assignment-input {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.assignment-error {
+  margin-top: 8px;
+  background-color: #FEF2F2;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--error);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.assignment-form-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ══════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════ */
+.btn-primary {
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background-color: #F8FAFC;
+  color: var(--text-main);
+  border-color: #CBD5E1;
+}
+
+.btn-complete {
+  padding: 8px 16px;
+  background-color: rgba(16, 185, 129, 0.08);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-complete:hover {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.btn-undo {
+  padding: 8px 16px;
+  background-color: rgba(245, 158, 11, 0.08);
+  color: #D97706;
+  border: 1px solid rgba(245, 158, 11, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-undo:hover {
+  background-color: rgba(245, 158, 11, 0.15);
+}
+
+.btn-edit {
+  padding: 8px 14px;
+  background-color: rgba(99, 102, 241, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-edit:hover {
+  background-color: rgba(99, 102, 241, 0.15);
+}
+
+.btn-delete {
+  padding: 8px 14px;
+  background-color: rgba(239, 68, 68, 0.08);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-delete:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.btn-save {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-save:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-confirm-delete {
+  padding: 8px 16px;
+  background-color: var(--error);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-confirm-delete:hover {
+  background-color: #DC2626;
+}
+
+/* ══════════════════════════════════
+   ASSIGNMENT LIST & CARDS
+   ══════════════════════════════════ */
+.assignments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.assignment-card {
+  background-color: var(--card-bg);
+  padding: 20px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.assignment-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+  border-color: #CBD5E1;
+}
+
+.assignment-card-content {
+  width: 100%;
+}
+
+.assignment-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.assignment-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.assignment-card-title {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.assignment-card-title.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: var(--text-secondary);
+}
+
+.assignment-card-subject {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 6px 0;
+  font-weight: 500;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.assignment-card-date {
+  color: var(--error);
+  font-size: 13px;
+  margin: 0;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.assignment-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════
+   INLINE EDIT FORM
+   ══════════════════════════════════ */
+.edit-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+  width: 100%;
+}
+
+.edit-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.edit-input {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 1px;
+}
+
+/* ══════════════════════════════════
+   DELETE CONFIRM
+   ══════════════════════════════════ */
+.delete-confirm-box {
+  background-color: #FEF2F2;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.delete-confirm-text {
+  color: var(--error);
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+}
+
+.delete-confirm-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ══════════════════════════════════
+   EMPTY STATE
+   ══════════════════════════════════ */
+.assignment-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 32px;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  border: 2px dashed #CBD5E1;
+  margin-top: 16px;
+}
+
+.assignment-empty-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.assignment-empty-title {
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.4px;
+}
+
+.assignment-empty-desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  max-width: 420px;
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════
+   TABLET  (≤ 1024px)
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .assignments-page {
+    padding: 24px 20px;
+  }
+
+  .edit-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .edit-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}
+
+/* ════════════════════════════════════════
+   MOBILE  (≤ 768px)
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .assignments-page {
+    padding: 24px 16px;
+  }
+
+  .assignments-title {
+    font-size: 26px;
+  }
+
+  .assignments-header {
+    margin-bottom: 24px;
+  }
+
+  .assignment-form-body {
+    padding: 24px 20px;
+  }
+
+  .assignment-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .assignment-form-footer {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .assignment-form-footer .btn-primary,
+  .assignment-form-footer .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .assignment-card {
+    padding: 20px;
+  }
+
+  .assignment-card-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .assignment-card-title {
+    white-space: normal;
+  }
+
+  .assignment-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .assignment-actions button {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    padding: 10px 8px;
+  }
+
+  .edit-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .edit-actions {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .edit-actions button {
+    flex: 1;
+  }
+}

@@ -1,0 +1,317 @@
+/* ══════════════════════════════════
+   PAGE
+   ══════════════════════════════════ */
+.career-page {
+  padding: 40px 24px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.career-page-header {
+  margin-bottom: 32px;
+}
+
+.career-page-title {
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.career-page-subtitle {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════
+   FORM CARD
+   ══════════════════════════════════ */
+.career-form-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.career-top-border {
+  height: 4px;
+  background: var(--primary);
+}
+
+.career-form-body {
+  padding: 32px;
+}
+
+.career-form-title {
+  margin: 0 0 24px 0;
+  color: var(--text-main);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+/* ── Grid ── */
+.career-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.career-form-grid-mt {
+  margin-top: 16px;
+}
+
+/* ── Field Group ── */
+.career-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.career-field-group-mt {
+  margin-top: 16px;
+}
+
+.career-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.career-input {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+/* ── Error Banner ── */
+.career-error-banner {
+  margin-top: 20px;
+  background-color: #FEF2F2;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--error);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ── Analyze Button ── */
+.career-form-footer {
+  margin-top: 28px;
+}
+
+.career-analyze-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.career-analyze-button:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.career-analyze-button:disabled {
+  background-color: #A5B4FC;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ══════════════════════════════════
+   LOADING
+   ══════════════════════════════════ */
+.career-loading-box {
+  background-color: rgba(99, 102, 241, 0.08);
+  border: 1px dashed rgba(99, 102, 241, 0.2);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.career-loading-text {
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ══════════════════════════════════
+   RESULT CARDS
+   ══════════════════════════════════ */
+.career-result-card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  margin-bottom: 32px;
+  padding: 32px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.career-result-section-title {
+  color: var(--text-main);
+  margin-bottom: 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+/* ── Score Meter ── */
+.career-score-number {
+  font-size: 56px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.career-progress-bar-bg {
+  background-color: #E2E8F0;
+  border-radius: 9999px;
+  height: 12px;
+  width: 100%;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.career-progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.career-score-label {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Score Color Modifiers ── */
+.score-good { color: var(--success); }
+.score-good.career-progress-bar-fill { background-color: var(--success); }
+
+.score-average { color: var(--warning); }
+.score-average.career-progress-bar-fill { background-color: var(--warning); }
+
+.score-low { color: var(--error); }
+.score-low.career-progress-bar-fill { background-color: var(--error); }
+
+/* ── Analysis content ── */
+.career-analysis-content {
+  line-height: 1.7;
+}
+
+.career-analysis-heading {
+  color: var(--text-main);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.career-analysis-list {
+  margin-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.career-analysis-text {
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-size: 14px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ════════════════════════════════════════
+   TABLET  (≤ 1024px)
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .career-page {
+    padding: 24px 20px;
+  }
+
+  .career-form-body {
+    padding: 24px;
+  }
+}
+
+/* ════════════════════════════════════════
+   MOBILE  (≤ 768px)
+   ════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .career-page {
+    padding: 24px 16px;
+  }
+
+  .career-page-title {
+    font-size: 26px;
+  }
+
+  .career-page-subtitle {
+    font-size: 14px;
+  }
+
+  .career-form-body {
+    padding: 24px 20px;
+  }
+
+  .career-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .career-form-grid-mt {
+    margin-top: 0;
+  }
+
+  .career-field-group-mt {
+    margin-top: 12px;
+  }
+
+  .career-score-number {
+    font-size: 44px;
+  }
+
+  .career-score-label {
+    font-size: 14px;
+  }
+
+  .career-result-card {
+    padding: 24px 20px;
+  }
+}
