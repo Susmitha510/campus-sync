@@ -35,12 +35,7 @@ app.get('/', (req, res) => {
   res.send('CampusSync Server is Running');
 });
 
-app.get('/test-env', (req, res) => {
-  res.json({
-    email: process.env.EMAIL,
-    hasPassword: !!process.env.EMAIL_PASSWORD
-  });
-});
+
 
 // Connect to MongoDB
 const PORT = process.env.PORT || 5000;
