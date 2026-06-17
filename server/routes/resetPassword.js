@@ -7,13 +7,18 @@ const bcrypt = require('bcryptjs');
 
 // Setup email transporter
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
+  family: 4,
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 10000,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.EMAIL_PASSWORD
   }
 });
-
 // Forgot password — send reset link
 router.post('/forgot', async (req, res) => {
   try {
@@ -33,7 +38,7 @@ router.post('/forgot', async (req, res) => {
     await user.save();
 
     // Send email
-    const resetLink = 'http://localhost:3000/reset-password/' + resetToken;
+    const resetLink = 'https://campus-sync-sigma.vercel.app/reset-password/' + resetToken;
 
     await transporter.sendMail({
       from: process.env.EMAIL,
