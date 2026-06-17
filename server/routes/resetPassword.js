@@ -7,18 +7,15 @@ const bcrypt = require('bcryptjs');
 
 // Setup email transporter
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: 'smtp-relay.brevo.com',
   port: 587,
   secure: false,
-  family: 4,
-  connectionTimeout: 10000,
-  greetingTimeout: 10000,
-  socketTimeout: 10000,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.EMAIL_PASSWORD
   }
 });
+
 // Forgot password — send reset link
 router.post('/forgot', async (req, res) => {
   try {
