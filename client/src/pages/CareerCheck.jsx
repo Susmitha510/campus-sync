@@ -36,7 +36,7 @@ function CareerCheck() {
       }
     };
     fetchProfile();
-  }, []);
+  }, [token]);
 
   const handleAnalyze = async () => {
     if (!form.name.trim())   { setErrorMsg('Please enter your name'); return; }
