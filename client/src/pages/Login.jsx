@@ -15,7 +15,7 @@ function Login() {
     if (!password.trim()) { setError('Please enter your password'); return; }
     setError('');
     try {
-      const res = await axios.post('https://campus-sync-pklq.onrender.com/api/auth/login', { email, password });
+      const res = await axios.post('https://campus-sync-production.up.railway.app/api/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       navigate('/board');

@@ -15,7 +15,7 @@ function ForgotPassword() {
     setMessage('');
     setError('');
     try {
-      const res = await axios.post('https://campus-sync-pklq.onrender.com/api/password/forgot', { email });
+      const res = await axios.post('https://campus-sync-production.up.railway.app/api/password/forgot', { email });
       setMessage(res.data.message);
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');

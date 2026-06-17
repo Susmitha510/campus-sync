@@ -23,7 +23,7 @@ function ResetPassword() {
     setLoading(true);
     setError('');
     try {
-      const res = await axios.post('https://campus-sync-pklq.onrender.com/api/password/reset/' + token, { password });
+      const res = await axios.post('https://campus-sync-production.up.railway.app/api/password/reset/' + token, { password });
       setMessage(res.data.message);
       setTimeout(() => navigate('/'), 2000);
     } catch (err) {

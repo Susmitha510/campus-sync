@@ -25,7 +25,7 @@ function Profile() {
 
   const fetchProfile = useCallback(async () => {
     try {
-      const res = await axios.get('https://campus-sync-pklq.onrender.com/api/profile', {
+      const res = await axios.get('https://campus-sync-production.up.railway.app/api/profile', {
         headers: { Authorization: token }
       });
       window[PROFILE_KEY] = res.data;
@@ -50,7 +50,7 @@ function Profile() {
 
     setErrorMsg('');
     try {
-      await axios.put('https://campus-sync-pklq.onrender.com/api/profile', {
+      await axios.put('https://campus-sync-production.up.railway.app/api/profile', {
         ...form,
         skills: form.skills.split(',').map(s => s.trim()).filter(Boolean)
       }, {

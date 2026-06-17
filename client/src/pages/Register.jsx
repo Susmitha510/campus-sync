@@ -32,7 +32,7 @@ function Register() {
 
     setError('');
     try {
-      await axios.post('https://campus-sync-pklq.onrender.com/api/auth/register', {
+      await axios.post('https://campus-sync-production.up.railway.app/api/auth/register', {
         ...form,
         skills: form.skills.split(',').map(s => s.trim()).filter(Boolean)
       });

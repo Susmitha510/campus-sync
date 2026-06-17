@@ -21,7 +21,7 @@ function CareerCheck() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get('https://campus-sync-pklq.onrender.com/api/profile', {
+        const res = await axios.get('https://campus-sync-production.up.railway.app/api/profile', {
           headers: { Authorization: token }
         });
         setForm(prev => ({
@@ -51,7 +51,7 @@ function CareerCheck() {
     setAnalysis('');
     setScore(null);
     try {
-      const res = await axios.post('https://campus-sync-pklq.onrender.com/api/career/analyze', form, {
+      const res = await axios.post('https://campus-sync-production.up.railway.app/api/career/analyze', form, {
         headers: { Authorization: token }
       });
       setAnalysis(res.data.analysis);
