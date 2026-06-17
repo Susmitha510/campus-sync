@@ -40,23 +40,29 @@ router.post('/forgot', async (req, res) => {
     // Send email
     const resetLink = 'https://campus-sync-sigma.vercel.app/reset-password/' + resetToken;
 
-    await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: email,
-      subject: 'CampusSync — Password Reset Request',
-      html: `
-        <h2>Password Reset Request</h2>
-        <p>You requested to reset your password for your CampusSync account.</p>
-        <p>Click the link below to reset your password. This link expires in 1 hour.</p>
-        <a href="${resetLink}" style="background:#4f46e5;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">Reset Password</a>
-        <p>If you did not request this, please ignore this email.</p>
-      `
+   console.log('Attempting to send email...');
+
+    const info = await transporter.sendMail({
+     from: process.env.EMAIL,
+     to: email,
+     subject: 'CampusSync — Password Reset Request',
+     html: `
+       <h2>Password Reset Request</h2>
+       <p>You requested to reset your password for your CampusSync account.</p>
+       <p>Click the link below to reset your password. This link expires in 1 hour.</p>
+       <a href="${resetLink}" style="background:#4f46e5;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">Reset Password</a>
+       <p>If you did not request this, please ignore this email.</p>
+  `
     });
+
+    console.log('Email sent successfully:', info.messageId);
 
     res.json({ message: 'Reset link sent to your email' });
 
   } catch (err) {
-    console.log(err);
+    console.error('Mail Error:', err);
+    console.error('Message:', err.message);
+    console.error('Code:', err.code);
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 });
