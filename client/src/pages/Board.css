@@ -482,11 +482,16 @@
 }
 
 .action-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  flex-wrap: wrap;
-  padding-top: 0;
-  align-items: center;
+}
+
+.action-row button {
+  width: 100%;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 12px;
 }
 
 .btn-delete {
