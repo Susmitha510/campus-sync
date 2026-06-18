@@ -2,6 +2,12 @@
 
 CampusSync is a full-stack web application developed using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The platform is designed to provide students with a centralized space to collaborate on projects and hackathons, manage assignments, share interview experiences, and assess their career readiness.
 
+## Live Demo
+
+Frontend: https://campus-sync-sigma.vercel.app/
+
+Backend API: https://campus-sync-production.up.railway.app/
+
 ## Features
 
 * Secure user authentication with Login, Registration, Forgot Password, and Reset Password functionalities.
@@ -22,6 +28,7 @@ CampusSync is a full-stack web application developed using the MERN stack (Mongo
 * JavaScript
 * Axios
 * React Router DOM
+* Vercel (Deployment)
 
 ### Backend
 
@@ -29,6 +36,7 @@ CampusSync is a full-stack web application developed using the MERN stack (Mongo
 * Express.js
 * JWT Authentication
 * Brevo Email API
+* Railway (Deployment)
 
 ### Database
 
@@ -68,23 +76,23 @@ Allows users to register and log in securely using JWT authentication. It also i
 
 ### Collaboration Board
 
-Enables students to create and view project and hackathon posts by specifying project details, required skills, and team size.
+Enables students to create and view project and hackathon posts by specifying project details, required skills, and team size. Users can create, edit, and manage collaboration opportunities efficiently.
 
 ### Assignment Management
 
-Allows students to create, update, and delete assignments and keep track of their academic activities.
+Allows students to create, update, and delete assignments and maintain their academic schedules in an organized manner.
 
 ### Interview Experiences
 
-Provides a platform for students to share interview experiences, placement tips, and company recruitment processes.
+Provides a platform for students to share interview experiences, placement tips, and company recruitment processes, helping peers prepare effectively for placements.
 
 ### Career Check
 
-Helps students evaluate their career readiness and identify areas that require improvement.
+Helps students evaluate their career readiness and identify areas that require improvement in their placement preparation.
 
 ### Profile Management
 
-Allows users to view and update their personal information within the platform.
+Allows users to view and update their personal information and maintain their profile details within the platform.
 
 ## Installation
 
@@ -118,6 +126,7 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 BREVO_API_KEY=your_brevo_api_key
+GROQ_API_KEY=your_groq_api_key
 CLIENT_URL=http://localhost:3000
 ```
 
@@ -135,8 +144,6 @@ cd client
 npm start
 ```
 
-The application will run at:
-
 Frontend:
 http://localhost:3000
 
@@ -145,19 +152,19 @@ http://localhost:5000
 
 ## Learning Outcomes
 
-This project helped in gaining practical knowledge of:
+This project provided practical experience in:
 
 * Full-stack web development using the MERN stack
-* RESTful API development
+* RESTful API development and integration
 * JWT-based authentication and authorization
-* MongoDB database design and integration
-* Email service integration using Brevo API
-* State management and component-based architecture in React
-* Responsive web design and deployment practices
+* MongoDB database design and management
+* Email service integration using the Brevo Email API
+* Component-based architecture and state management in React
+* Responsive web design and cloud deployment using Vercel and Railway
 
 ## Future Enhancements
 
-* Real-time messaging between collaborators
+* Real-time chat and messaging system
 * Notifications and reminders
 * File and document sharing
 * AI-powered career recommendations
