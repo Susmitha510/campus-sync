@@ -142,5 +142,4 @@ Through this project, I gained practical experience in:
 ## Author
 
 **Susmitha P**
-B.E. Computer Science and Engineering
 
