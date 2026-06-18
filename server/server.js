@@ -35,17 +35,7 @@ app.get('/', (req, res) => {
   res.send('CampusSync Server is Running');
 });
 
-process.on('uncaughtException', (err) => {
-  console.error('Uncaught Exception:', err);
-});
 
-process.on('unhandledRejection', (reason) => {
-  console.error('Unhandled Rejection:', reason);
-});
-
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received');
-});
 
 // Connect to MongoDB
 const PORT = process.env.PORT || 5000;
